@@ -166,9 +166,9 @@
                         <li>
                             <a class="dropdown-item d-flex align-items-center" href="#">
                                 <i class="bi bi-box-arrow-right"></i>
-                               <span>
-                  <a href="./login.html">Sign Out</a>
-                </span>
+                                <span>
+                                    <a href="./login.html">Sign Out</a>
+                                </span>
                             </a>
                         </li>
 
@@ -322,7 +322,8 @@
                                     </select>
                                 </div>
                                 <div class="col-md-4 col-sm-12">
-                                    <select class="form-select border-primary text-primary">
+                                    <select class="form-select border-primary text-primary" id="test" name="form_select"
+                                        onchange="showDiv('hidden_div', this)">
                                         <option value="select" selected>Select Template</option>
                                         <option value="show">Preference</option>
                                         <option value="show">Acceptance</option>
@@ -332,7 +333,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="mt-4">
+                            <div class="mt-4" id="hidden_div" style="display: none;">
                                 <div class="accordion accordion-flush " id="accordionFlushExample">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
@@ -1083,7 +1084,9 @@
 
     <!-- Addition Javascript Code--- -->
     <script>
-
+        function showDiv(divId, element) {
+            document.getElementById(divId).style.display = element.value == "show" ? 'block' : 'none';
+        }
     </script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Template Main JS File -->
